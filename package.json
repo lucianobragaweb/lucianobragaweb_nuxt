@@ -12,16 +12,15 @@
     "lint": "yarn lint:js",
     "lintfix": "yarn lint:js --fix",
     "test": "jest",
-    "build:gh-pages": "cross-env DEPLOY_ENV=GH_PAGES nuxt build",
-    "generate:gh-pages": "cross-env DEPLOY_ENV=GH_PAGES nuxt generate",
-    "deploy": "git subtree push --prefix dist origin gh-pages",
-    "deploy:gh-pages": "npm run build:gh-pages && npm run generate:gh-pages && git add . && git commit -m \"deploy\" && npm run deploy"
+    "babel-jest": "^27.4.4",
+    "deploy": "cross-env DEPLOY_ENV=GH_PAGES yarn build && cross-env DEPLOY_ENV=GH_PAGES yarn generate && gh-pages -d dist"
   },
   "dependencies": {
     "@nuxt/content": "^1.15.1",
     "@nuxtjs/axios": "^5.13.6",
     "@nuxtjs/pwa": "^3.3.5",
     "core-js": "^3.19.3",
+    "daisyui": "^2.5.0",
     "nuxt": "^2.15.8",
     "vue": "^2.6.14",
     "vue-server-renderer": "^2.6.14",

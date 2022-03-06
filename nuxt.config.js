@@ -9,7 +9,7 @@ const routerBase =
 
 export default {
   // Target: https://go.nuxtjs.dev/config-target
-  mode: 'universal',
+  target: 'static',
   ...routerBase,
 
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -50,9 +50,7 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
-    '@nuxtjs/pwa',
-    // https://go.nuxtjs.dev/content
-    '@nuxt/content'
+    '@nuxtjs/pwa'
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -73,5 +71,15 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+  },
+
+  // generate: {
+  //   fallback: true
+  // },
+
+  tailwindcss: {
+    config: {
+      plugins: [require('daisyui')]
+    }
   }
 }
